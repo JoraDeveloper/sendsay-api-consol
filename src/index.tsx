@@ -3,6 +3,7 @@ import {render} from 'react-dom';
 import axios from 'axios';
 const Sendsay = require('sendsay-api');
 import './style.scss';
+import Login from './components/Login/Login';
 
 const loginData = {
     login: 'viktorpilevins@gmail.com',
@@ -22,8 +23,8 @@ const App:React.FC = () => {
 
 
     return (
-        <div>
-            <h1>Hello World</h1>
+        <div className='app'>
+            <Login />
         </div>
     )
 }

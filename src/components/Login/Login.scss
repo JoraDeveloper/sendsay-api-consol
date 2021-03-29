@@ -1,0 +1,130 @@
+.login {
+  height: 100%;
+
+  &__container {
+    max-width: 1020px;
+    height: 100vh;
+    margin: 0 auto;
+    padding: 0 30px;
+    background-color: #F7F7F7;
+    display: flex;
+  }
+
+  &__modal {
+    margin: auto;
+    padding: 40px 30px;
+  }
+
+}
+
+
+.login-modal {
+
+  width: 520px;
+  height: 425px;
+  background: #FFFFFF;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  position: relative;
+
+  h2 {
+    font-family: 'SF Pro Text', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 30px;
+    color: #0D0D0D;
+  }
+
+  &__form {
+    margin-top: 20px;
+  }
+
+  &::before {
+    content: '';
+    width: 115px;
+    height: 30px;
+    position: absolute;
+    top: -50px;
+    left: 200px;
+    background: url("../../assets/logo.svg") no-repeat center;
+    background-size: contain;
+  }
+
+  &::after {
+    content: 'https://github.com/JoraDeveloper';
+    position: absolute;
+    height: 30px;
+    bottom: -50px;
+    left: 145px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 20px;
+    color: #999999;
+  }
+
+}
+
+.login-modal-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  &__field {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__label {
+    margin-bottom: 5px;
+  }
+
+  &__input {
+    background: #FFFFFF;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    outline: none;
+    box-sizing: border-box;
+    border-radius: 5px;
+    padding: 5px 10px;
+    font-size: 18px;
+    line-height: 30px;
+    margin-bottom: 20px;
+
+
+    &:hover {
+      border: 1px solid rgba(0, 0, 0, 0.4);
+    }
+
+    &:focus {
+      box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
+    }
+  }
+
+}
+
+.login-modal-label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: "SF Pro Text", sans-serif;
+
+  &__text {
+    color: #0D0D0D;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 20px;
+  }
+
+  &__description {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 20px;
+    color: #999999;
+  }
+
+}
+
+// TODO: label, input должны быть в блоке login-modal-form__field
