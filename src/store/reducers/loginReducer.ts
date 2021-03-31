@@ -11,11 +11,11 @@ interface Form {
     attributes?: React.AllHTMLAttributes<HTMLInputElement>,
 }
 
-interface stateProps {
+export interface StateProps {
     forms: Form[]
 }
 
-const initialState = {
+const initialState: StateProps = {
     forms: [
         {
             id: 1,
@@ -27,7 +27,7 @@ const initialState = {
             validator: [
                 {
                     message: 'true',
-                    validate: (value: string) => value.trim() === ''
+                    validate: (value: string) => value.trim() !== ''
                 }
             ]
 
@@ -42,7 +42,7 @@ const initialState = {
             validator: [
                 {
                     message: 'true',
-                    validate: (value: string) => value.trim() === ''
+                    validate: (value: string) => value.trim() !== ''
                 }
             ]
 
@@ -57,7 +57,7 @@ const initialState = {
             validator: [
                 {
                     message: 'true',
-                    validate: (value: string) => value.trim() === ''
+                    validate: (value: string) => value.trim() !== ''
                 },
                 {
                     message: 'true',
@@ -70,7 +70,7 @@ const initialState = {
 }
 
 
-const loginReducer = (state: stateProps = initialState, action: AnyAction) => {
+const loginReducer = (state: StateProps = initialState, action: AnyAction) => {
     switch (action.type) {
         default: return state;
     }

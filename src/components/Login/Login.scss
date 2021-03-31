@@ -76,9 +76,25 @@
     flex-direction: column;
   }
 
+  &__field.error {
+    .login-modal-form__label {
+      .login-modal-label__text {
+        color: #CF2C00;
+      }
+    }
+
+    .login-modal-form__input {
+      border: 1px solid #CF2C00;
+      box-sizing: border-box;
+      box-shadow: 0 0 5px rgba(207, 44, 0, 0.5);
+      border-radius: 5px;
+    }
+  }
+
   &__label {
     margin-bottom: 5px;
   }
+
 
   &__input {
     background: #FFFFFF;
@@ -109,6 +125,12 @@
   align-items: center;
   font-family: "SF Pro Text", sans-serif;
 
+  &.error {
+    .login-modal-label__text {
+      color: #CF2C00;
+    }
+  }
+
   &__text {
     color: #0D0D0D;
     font-style: normal;
@@ -126,5 +148,6 @@
   }
 
 }
+
 
 // TODO: label, input должны быть в блоке login-modal-form__field

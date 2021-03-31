@@ -46,6 +46,7 @@ const useValidation = (value: string, validators: ValidatorType[]) => {
             errors.push(message);
         }
     })
+    //console.log(errors);
 
     return errors;
 }
