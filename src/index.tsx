@@ -1,32 +1,33 @@
 import React from 'react';
 import {render} from 'react-dom';
-import axios from 'axios';
-const Sendsay = require('sendsay-api');
+import {createStore, applyMiddleware, compose} from "redux";
+import {Provider} from 'react-redux';
 import './style.scss';
-import Login from './components/Login/Login';
+import App from './App';
+import rootReducer from './store/reducers/rootReducer';
 
-const loginData = {
-    login: 'viktorpilevins@gmail.com',
-    password: 'do2Chepha'
+
+declare global {
+    interface Window {
+        __REDUX_DEVTOOLS_EXTENSION_COMPOSE__?: typeof compose;
+    }
 }
 
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
-const App:React.FC = () => {
+const enhancer = composeEnhancers(
+    applyMiddleware(),
+    // other store enhancers if any
+);
 
-    let sendsay = new Sendsay({
-        auth: loginData
-    });
-
-    sendsay.request({ action: 'pong'}).then(function(res: any) {
-        console.log(res);
-    })
+const store = createStore(rootReducer, enhancer);
 
 
-    return (
-        <div className='app'>
-            <Login />
-        </div>
-    )
-}
 
-render(<App/>, document.getElementById('root'));
+
+render(
+    <Provider store={store}>
+        <App />
+    </Provider>,
+    document.getElementById('root')
+);
