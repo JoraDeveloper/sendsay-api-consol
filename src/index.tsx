@@ -2,6 +2,7 @@ import React from 'react';
 import {render} from 'react-dom';
 import {createStore, applyMiddleware, compose} from "redux";
 import {Provider} from 'react-redux';
+import {BrowserRouter} from "react-router-dom";
 import './style.scss';
 import App from './App';
 import rootReducer from './store/reducers/rootReducer';
@@ -26,8 +27,10 @@ const store = createStore(rootReducer, enhancer);
 
 
 render(
-    <Provider store={store}>
-        <App />
-    </Provider>,
+    <BrowserRouter>
+        <Provider store={store}>
+            <App />
+        </Provider>
+    </BrowserRouter>,
     document.getElementById('root')
 );

@@ -36,15 +36,11 @@ const initialState: StateProps = {
             id: 2,
             value: '',
             label: 'Саблогин',
+            description:'Опционально',
             attributes: {
                 name: 'sublogin',
             },
-            validator: [
-                {
-                    message: 'true',
-                    validate: (value: string) => value.trim() !== ''
-                }
-            ]
+            validator: []
 
         },
         {
