@@ -69,14 +69,15 @@ const Login: React.FC = () => {
             sublogin: subloginValue,
             password: passwordValue
         }
-        sendsay.login(data).then(() => {
+        sendsay.login(data).then((res: any) => {
             setIsFetch(false);
             dispatch(loginFunc(sendsay));
+            document.cookie = `session=${sendsay.session}; path=/`;
         }).catch((err: any) => {
             setError({isError: true, message: `{id:"${err.id}", explain: "${err.explain}"}`});
             setIsFetch(false);
         });
-        console.log('send data: ', data);
+        //console.log('send data: ', data);
     }
 
 
