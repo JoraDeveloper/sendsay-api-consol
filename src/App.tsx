@@ -3,6 +3,8 @@ import Login from "./components/Login/Login";
 import {Switch, Route, Redirect, Link} from 'react-router-dom';
 import {useLogin} from "./hooks/useLogin";
 
+
+
 const LoginSuccess = () => {
     const {sendsay} = useLogin()
     sendsay.request({ action: 'pong'}).then(function(res: any) {
@@ -15,6 +17,7 @@ const LoginSuccess = () => {
 
 
 const App:React.FC = () => {
+
     const {isLogin} = useLogin();
 
     const routes = (isLogin: boolean) => {
@@ -28,9 +31,7 @@ const App:React.FC = () => {
         } else {
             return (
                 <>
-                    <Route path='/login' >
-                        <Login />
-                    </Route>
+                    <Route path='/login' component={Login} />
                     <Redirect to='/login' />
                 </>
             )

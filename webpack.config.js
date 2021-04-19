@@ -12,13 +12,14 @@ module.exports = {
     output: {
         path: path.resolve(__dirname, 'dist'),
         filename: '[name].js',
+        publicPath: '/'
     },
     resolve: {
         extensions: ['.ts', '.tsx', '.js']
     },
     devServer: {
         port: 3030,
-        hot: true
+        historyApiFallback: true,
     },
     plugins: [
         new HTMLWebpackPlugin({
